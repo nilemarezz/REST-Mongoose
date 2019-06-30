@@ -1,0 +1,8 @@
+<h1>Edit Employee <%=employee.name%></h1>
+<form action="/employee/edit/<%= employee._id%>?_method=PUT" method="post">
+   name: <input type="text" name="name" value="<%=employee.name%>"><br>
+   age: <input type="number" name="age" value="<%=employee.age%>"><br>
+   branch: <input type="text" name="branch" value="<%=employee.branch%>"><br>
+   
+  <input type="submit" value="Submit">
+</form>
