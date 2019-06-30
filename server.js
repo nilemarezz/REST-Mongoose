@@ -8,7 +8,7 @@ const app = express();
 
 
 // Database Connection
-mongoose.connect('mongodb://localhost/TEST_REST',{useNewUrlParser:true});
+mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true});
 const db = mongoose.connection;
 db.on('error',(error)=>console.log(error));
 db.once('open',()=>console.log('Connect to database'));
@@ -20,7 +20,9 @@ app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 
 //Route
-
+app.get('/',(req,res)=>res.render('landing'))
+const employeeRoute = require("./routes/index");
+app.use('/employee',employeeRoute);
 
 
 //Listen

@@ -1,0 +1,10 @@
+<h1>This is Show Employee</h1>
+<%for(let i =0;i<employee.length;i++){%>
+    <h4>User <%= i+1 %></h4>
+    <li><strong>ID: </strong> <%= employee[i]._id%></li>
+    <li><strong>Name: </strong> <%= employee[i].name%></li>
+    <li><strong>Age: </strong><%= employee[i].age%></li>
+    <li><strong>Branch: </strong><%= employee[i].branch%></li>
+    <li><strong>Date: </strong><%= employee[i].date%></li>
+    
+<%}%>
